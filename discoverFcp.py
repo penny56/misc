@@ -27,7 +27,7 @@ console = client.consoles.console
 cpc = client.cpcs.find_by_name(cpc)
 
 for sg in cpc.list_associated_storage_groups():
-    if "A257_Longevity_Shared_XIV_SG" and str(sg.get_property('type')) == "fcp" and str(sg.get_property('fulfillment-state')) == "complete":
+    if str(sg.get_property('type')) == "fcp" and str(sg.get_property('fulfillment-state')) == "complete":
         sgName = str(sg.get_property('name'))
         try:
             tBegin = int(time.time())
